@@ -13,7 +13,7 @@ gulp.task("default", function() {
 		"src/client/app-config.js"
 	])
 	.pipe(concat("script.min.js"))
-	.pipe(jsmin())
+//	.pipe(jsmin())
 	/*
 	.pipe(uglify().on("error", function(e){
 		console.log(e);
