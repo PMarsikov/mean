@@ -26,7 +26,7 @@ if (mongo) {
 }
 mongoose.connect(dburl);
 
-
+/* 
 // CONNECTION EVENTS
 mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dburl);
@@ -56,7 +56,7 @@ process.on('SIGTERM', function() {
   gracefulShutdown('App termination (SIGTERM)', function() {
     process.exit(0);
   });
-});
+}); */
 
 
 // BRING IN YOUR SCHEMAS & MODELS
