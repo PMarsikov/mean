@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: mybluemix.net
+  name: mean-pmarsikov
+  host: mean-pmarsikov
+  services:
+   - mongodb-9o
+  buildpack: sdk-for-nodejs
