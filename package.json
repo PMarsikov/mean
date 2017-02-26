@@ -7,7 +7,7 @@
     "test": "karma start karma.conf.ci.js --no-fail-on-empty-test-suite",
     "postinstall": "bower install",
     "start": "node src/server/app-server.js",
-    "build": "gulp build",
+    "build": "gulp",
     "preupdate-webdriver": "npm install",
     "update-webdriver": "webdriver-manager update",
     "preprotractor": "npm run update-webdriver",
