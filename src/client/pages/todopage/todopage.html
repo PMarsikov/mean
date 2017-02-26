@@ -1,0 +1,87 @@
+	<h1>ToDo</h1>
+	<a href="#/">go to main page</a>
+
+	<div class="row">
+		
+		<div class="col-md-1">
+			<select  style="background-color: #337ab7; color: white" class="form-control" ng-model="createTaskSeverityInput">
+				<option value="" hidden>Choose severity</option>
+				<option value="1">Severity 1</option>
+				<option value="2">Severity 2</option>
+				<option value="3">Severity 3</option>
+				<option value="4">Severity 4</option>
+			</select>
+		</div>
+
+		<div class="col-md-11">
+			<!-- With help of ng-submit it's possoble to use ENTER btn-->
+			<form ng-submit="createTask()"> 
+				<div class="col-md-11">
+					<input class="form-control" 
+							placeholder="What I need to do?" 
+							ng-model="createTaskInput"/>
+				</div>
+				<div class="col-md-1">
+					<button class="btn btn-success">Add task</button>
+				</div>
+			</form> 
+		</div>
+
+	</div>
+
+
+	<table class="table table-striped">
+		<tr>
+			<th>Severity</th>
+			<th>Task</th>
+			<th>Actions</th>
+			<th>Complited</th>
+		</tr>
+		<tr ng-repeat="todo in todos | orderBy: 'severity'" ng-class="{'isComplitedStyle' : todo.isCompleted}">
+			<td>{{todo.severity}}</td>
+			<td>
+				<!-- If Editing...-->
+				<span ng-if="!todo.isEditing">{{todo.task}}</span>
+				<!-- If not Editing...-->
+				<form ng-submit="updateTask(todo)">
+					<input 
+						ng-class="form-control"
+						ng-if="todo.isEditing"
+						ng-value="todo.task"
+						ng-model="todo.updatedTask" />
+				</form>
+			</td>
+			<td>
+				<button 
+					class="btn btn-info" 
+					ng-if="!todo.isEditing" 
+					ng-click="onEditClick(todo)">Edit
+				</button>
+				<button 
+					class="btn btn-danger"
+					ng-if="!todo.isEditing"
+					ng-click="deleteTask(todo)">Delete
+				</button>
+
+				<button 
+					class="btn btn-primary" 
+					ng-if="todo.isEditing"
+					ng-click="updateTask(todo)">Save
+				</button>
+				<button 
+					class="btn btn-default"
+					ng-if="todo.isEditing"
+					ng-click="onCancelClick(todo)">Cancel
+				</button>
+
+			</td>
+			<!--{{todo.isCompleted}}-->
+			<td>
+				<input 
+					type="checkbox" 
+					ng-checked="todo.isCompleted" 
+					ng-click="changeStatus(todo)"/>
+			</td>
+		</tr>
+	</table>
+</div>
