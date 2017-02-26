@@ -6,5 +6,5 @@ applications:
   name: mean-pmarsikov
   host: mean-pmarsikov
   services:
-   - mongodb-9o
+   - Compose for MongoDB-x3
   buildpack: sdk-for-nodejs
