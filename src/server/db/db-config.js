@@ -20,14 +20,14 @@ if (mongo) {
 // if no mongodb service bound to app
 // set default local server path
   } else {
-    //conn_str = "mongodb://localhost:27017";
-    conn_str = 'mongodb://sashas:sashas@ds017185.mlab.com:17185/mytasklist';
+    conn_str = "mongodb://localhost:27017";
+    //conn_str = 'mongodb://sashas:sashas@ds017185.mlab.com:17185/mytasklist';
   }
 // if no services found
 // use local server path
 } else {
-//  conn_str = "mongodb://localhost:27017";
-    conn_str = 'mongodb://sashas:sashas@ds017185.mlab.com:17185/mytasklist';
+  conn_str = "mongodb://localhost:27017";
+//    conn_str = 'mongodb://sashas:sashas@ds017185.mlab.com:17185/mytasklist';
 }
 //mongoose.connect(conn_str);
 
