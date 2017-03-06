@@ -1,11 +1,17 @@
 
-angular.module('todoapp')
+//angular.module('todoapp')
+//angular.module('todoapp')
+var todoapp = angular.module('todoapp',[]);
+todoapp
 	.controller('todoPageCtrl', 
-		['$scope','todoPageFactory', function($scope, todoPageFactory) {
+		['$scope', 'todoPageFactory', 
+		function($scope, todoPageFactory) {
 	// variable just make a copy , object pass object directly
 	var params = {
 		createHasInput: false // if something was entered in createTaskInput
 	};	
+
+	$scope.aa = "s";
 
 	todoPageFactory.getTodos($scope);
 
